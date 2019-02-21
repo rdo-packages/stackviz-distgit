@@ -12,6 +12,9 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global pname stackviz
 
+%{?dlrn: %global tarsources %{sname}-%{upstream_version}}
+%{!?dlrn: %global tarsources package}
+
 %global common_desc \
 A visualization utility to help analyze the performance of \
 DevStack setup and Tempest executions
@@ -23,7 +26,7 @@ Summary:        Visualization utility
 
 License:        ASL 2.0
 URL:            http://git.openstack.org/cgit/openstack/%{pname}
-Source0:        http://tarballs.openstack.org/%{name}/%{pname}-master.tar.gz
+Source0:        http://tarballs.openstack.org/package-stackviz-element/stackviz-latest.tar.gz
 
 BuildArch:      noarch
 
@@ -66,7 +69,7 @@ Requires:       python%{pyver}-subunit2sql
 %{common_desc}
 
 %prep
-%autosetup -n stackviz-%{upstream_version} -S git
+%autosetup -n %{tarsources} -S git
 
 %py_req_cleanup
 
