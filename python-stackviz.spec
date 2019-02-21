@@ -12,6 +12,9 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global pname stackviz
 
+%{?dlrn: %global tarsources %{sname}-%{upstream_version}}
+%{!?dlrn: %global tarsources package}
+
 %global common_desc \
 A visualization utility to help analyze the performance of \
 DevStack setup and Tempest executions
@@ -23,10 +26,12 @@ Summary:        Visualization utility
 
 License:        ASL 2.0
 URL:            http://git.openstack.org/cgit/openstack/%{pname}
-Source0:        http://tarballs.openstack.org/%{name}/%{pname}-master.tar.gz
+Source0:        http://tarballs.openstack.org/package-stackviz-element/stackviz-latest.tar.gz
 
 BuildArch:      noarch
 
+BuildRequires:  nodejs
+BuildRequires:  /usr/bin/npm
 BuildRequires:  git
 BuildRequires:  python%{pyver}-subunit
 %if %{pyver} == 2
@@ -66,15 +71,18 @@ Requires:       python%{pyver}-subunit2sql
 %{common_desc}
 
 %prep
-%autosetup -n stackviz-%{upstream_version} -S git
+%autosetup -n %{tarsources} -S git
 
 %py_req_cleanup
 
 %build
+rm -rf node_modules
+npm run build
 %{pyver_build}
 
 %install
-
+mkdir -p %{buildroot}/%{_datadir}/%{pname}
+cp -r stackviz-html %{buildroot}/%{_datadir}/%{pname}
 %{pyver_install}
 
 %check
@@ -88,6 +96,7 @@ export PYTHON=/usr/bin/python3
 %license LICENSE
 %doc README.rst
 %{_bindir}/stackviz-export
+%{_datadir}/%{pname}
 %{pyver_sitelib}/stackviz
 %{pyver_sitelib}/stackviz*.egg-info
 
