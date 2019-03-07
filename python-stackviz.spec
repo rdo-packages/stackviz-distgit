@@ -53,6 +53,7 @@ BuildRequires:  python%{pyver}-openstackdocstheme
 Summary:        Tempest visualization utility
 %{?python_provide:%python_provide python%{pyver}-%{pname}}
 
+Requires:       python%{pyver}-six
 Requires:       python%{pyver}-subunit
 %if %{pyver} == 2
 Requires:       python-testrepository
