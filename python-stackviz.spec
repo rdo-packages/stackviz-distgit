@@ -93,3 +93,4 @@ export PYTHON=/usr/bin/python3
 %{pyver_sitelib}/stackviz*.egg-info
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/stackviz/commit/?id=cf87b63aece8f9dac85a67ceb8343ac1f46c50e4
