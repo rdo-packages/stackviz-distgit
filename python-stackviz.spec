@@ -30,12 +30,11 @@ BuildArch:      noarch
 BuildRequires:  git
 BuildRequires:  python%{pyver}-subunit
 %if %{pyver} == 2
-BuildRequires:  python-testrepository
 BuildRequires:  python-docutils
 %else
-BuildRequires:  python%{pyver}-testrepository
 BuildRequires:  python%{pyver}-docutils
 %endif
+BuildRequires:  python%{pyver}-stestr
 BuildRequires:  python%{pyver}-testtools
 BuildRequires:  python%{pyver}-subunit2sql
 BuildRequires:  openstack-macros
@@ -55,11 +54,7 @@ Summary:        Tempest visualization utility
 
 Requires:       python%{pyver}-six
 Requires:       python%{pyver}-subunit
-%if %{pyver} == 2
-Requires:       python-testrepository
-%else
-Requires:       python%{pyver}-testrepository
-%endif
+Requires:       python%{pyver}-stestr
 Requires:       python%{pyver}-testtools
 Requires:       python%{pyver}-subunit2sql
 
@@ -83,7 +78,7 @@ Requires:       python%{pyver}-subunit2sql
 export PYTHON=/usr/bin/python3
 %endif
 
-%{pyver_bin} setup.py test
+stestr-%{pyver} run
 
 %files -n python%{pyver}-%{pname}
 %license LICENSE
