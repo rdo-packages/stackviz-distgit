@@ -23,7 +23,7 @@ Summary:        Visualization utility
 
 License:        ASL 2.0
 URL:            http://git.openstack.org/cgit/openstack/%{pname}
-Source0:        http://tarballs.openstack.org/%{name}/%{pname}-master.tar.gz
+Source0:        https://tarballs.openstack.org/package-stackviz-element/%{pname}-latest.tar.gz
 
 BuildArch:      noarch
 
@@ -85,6 +85,7 @@ stestr-%{pyver} run
 %files -n python%{pyver}-%{pname}
 %license LICENSE
 %doc README.rst
+%{_datarootdir}/stackviz-html
 %{_bindir}/stackviz-export
 %{pyver_sitelib}/stackviz
 %{pyver_sitelib}/stackviz*.egg-info
