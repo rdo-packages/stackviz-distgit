@@ -23,7 +23,7 @@ Summary:        Visualization utility
 
 License:        ASL 2.0
 URL:            http://git.openstack.org/cgit/openstack/%{pname}
-Source0:        http://tarballs.openstack.org/%{name}/%{pname}-master.tar.gz
+Source0:        http://tarballs.openstack.org/%{name}/%{pname}-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
 
