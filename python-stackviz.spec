@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global pname stackviz
 
@@ -28,39 +17,35 @@ Source0:        http://tarballs.openstack.org/%{name}/%{pname}-%{upstream_versio
 BuildArch:      noarch
 
 BuildRequires:  git
-BuildRequires:  python%{pyver}-subunit
-%if %{pyver} == 2
-BuildRequires:  python-docutils
-%else
-BuildRequires:  python%{pyver}-docutils
-%endif
-BuildRequires:  python%{pyver}-stestr
-BuildRequires:  python%{pyver}-testrepository
-BuildRequires:  python%{pyver}-testtools
-BuildRequires:  python%{pyver}-subunit2sql
+BuildRequires:  python3-subunit
+BuildRequires:  python3-docutils
+BuildRequires:  python3-stestr
+BuildRequires:  python3-testrepository
+BuildRequires:  python3-testtools
+BuildRequires:  python3-subunit2sql
 BuildRequires:  openstack-macros
 
 # Test requirements
 
-BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  python%{pyver}-oslotest
-BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python3-sphinx
+BuildRequires:  python3-oslotest
+BuildRequires:  python3-openstackdocstheme
 
 %description
 %{common_desc}
 
-%package -n     python%{pyver}-%{pname}
+%package -n     python3-%{pname}
 Summary:        Tempest visualization utility
-%{?python_provide:%python_provide python%{pyver}-%{pname}}
+%{?python_provide:%python_provide python3-%{pname}}
 
-Requires:       python%{pyver}-six
-Requires:       python%{pyver}-subunit
-Requires:       python%{pyver}-stestr
-Requires:       python%{pyver}-testrepository
-Requires:       python%{pyver}-testtools
-Requires:       python%{pyver}-subunit2sql
+Requires:       python3-six
+Requires:       python3-subunit
+Requires:       python3-stestr
+Requires:       python3-testrepository
+Requires:       python3-testtools
+Requires:       python3-subunit2sql
 
-%description -n python%{pyver}-%{pname}
+%description -n python3-%{pname}
 %{common_desc}
 
 %prep
@@ -69,24 +54,24 @@ Requires:       python%{pyver}-subunit2sql
 %py_req_cleanup
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %install
 
-%{pyver_install}
+%{py3_install}
 
 %check
-%if %{pyver} > 2
+%if 3 > 2
 export PYTHON=/usr/bin/python3
 %endif
 
-stestr-%{pyver} run
+stestr-3 run
 
-%files -n python%{pyver}-%{pname}
+%files -n python3-%{pname}
 %license LICENSE
 %doc README.rst
 %{_bindir}/stackviz-export
-%{pyver_sitelib}/stackviz
-%{pyver_sitelib}/stackviz*.egg-info
+%{python3_sitelib}/stackviz
+%{python3_sitelib}/stackviz*.egg-info
 
 %changelog
