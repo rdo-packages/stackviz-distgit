@@ -28,7 +28,7 @@ BuildArch:      noarch
 BuildRequires:  /usr/bin/gpgv2
 %endif
 
-BuildRequires:  git
+BuildRequires:  git-core
 BuildRequires:  python3-subunit
 BuildRequires:  python3-docutils
 BuildRequires:  python3-stestr
