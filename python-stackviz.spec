@@ -31,10 +31,10 @@ BuildRequires:  /usr/bin/gpgv2
 BuildRequires:  git-core
 BuildRequires:  python3-subunit
 BuildRequires:  python3-docutils
+BuildRequires:  python3-oslo-db
 BuildRequires:  python3-stestr
 BuildRequires:  python3-testrepository
 BuildRequires:  python3-testtools
-BuildRequires:  python3-subunit2sql
 BuildRequires:  openstack-macros
 
 # Test requirements
@@ -50,12 +50,12 @@ BuildRequires:  python3-openstackdocstheme
 Summary:        Tempest visualization utility
 %{?python_provide:%python_provide python3-%{pname}}
 
+Requires:       python3-oslo-db >= 6.0.0
 Requires:       python3-six
 Requires:       python3-subunit
 Requires:       python3-stestr
 Requires:       python3-testrepository
 Requires:       python3-testtools
-Requires:       python3-subunit2sql
 
 %description -n python3-%{pname}
 %{common_desc}
