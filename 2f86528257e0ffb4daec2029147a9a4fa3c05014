@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bbd82fd1_0c6db039",
+        "filename": "python-stackviz.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2021-04-07T15:44:20Z",
+      "side": 1,
+      "message": "Extra % (same for the other 2)",
+      "range": {
+        "startLine": 8,
+        "startChar": 33,
+        "endLine": 8,
+        "endChar": 34
+      },
+      "revId": "2f86528257e0ffb4daec2029147a9a4fa3c05014",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
