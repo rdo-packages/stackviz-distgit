@@ -90,3 +90,4 @@ stestr-%{pyver} run
 %{pyver_sitelib}/stackviz*.egg-info
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/stackviz/commit/8cd99f3bab5ba64bf1d162be7d0c5f4599acf333
