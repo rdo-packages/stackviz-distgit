@@ -1,0 +1,8 @@
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Submitted-by: Alfredo Moralejo <amoralej@redhat.com>
+Submitted-at: Tue, 13 Apr 2021 06:30:50 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/stackviz-distgit/+/33148
+Project: openstack/stackviz-distgit
+Branch: refs/heads/train-rdo
