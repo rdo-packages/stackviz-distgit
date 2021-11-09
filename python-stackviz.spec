@@ -88,3 +88,4 @@ stestr run
 %{python3_sitelib}/stackviz*.egg-info
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/stackviz/commit/ff56bd5d0194bf6314da668fb0bfb0f4a739c0d5
