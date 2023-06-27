@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42c70893_3429af70",
+        "filename": "python-stackviz.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-06-27T10:01:05Z",
+      "side": 0,
+      "message": "stestr is imported in the code:\n\nhttps://github.com/openstack/stackviz/blob/7befee2b3cf80c7ba61373d311a70199ea9123f8/stackviz/parser/tempest_subunit.py#L30-L31\n\nBut it\u0027s not in requirements.txt so i think it is an upstream bug. I\u0027ve sent https://review.opendev.org/c/openstack/stackviz/+/887029",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 5
+      },
+      "revId": "729b9dbd07a298d6d82b4e1c36eb21f0b650b03e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
