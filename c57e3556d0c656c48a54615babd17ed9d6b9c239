@@ -1,0 +1,10 @@
+Code-Review+2: Arx Cruz <arxcruz@redhat.com>
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Code-Review+2: Karolina Kula <kkula@redhat.com>
+Workflow+1: Karolina Kula <kkula@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Tue, 04 Jul 2023 14:27:43 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/stackviz-distgit/+/48976
+Project: openstack/stackviz-distgit
+Branch: refs/heads/rpm-master
